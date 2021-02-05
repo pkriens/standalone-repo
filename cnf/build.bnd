@@ -1,0 +1,22 @@
+ver						1.0.0
+rel                     https://maven.pkg.github.com/HeilaTechnologies/heilaiq-bnd
+
+Bundle-Version			${ver}.${tstamp}
+-pom:                   version=${ver}-SNAPSHOT
+-groupid:               com.heilaiq
+-releaserepo            Github
+
+-plugin: \
+    aQute.bnd.repository.maven.provider.MavenBndRepository;\
+        snapshotUrl         ='${rel}';\
+        releaseUrl          ='${rel}';\
+        noupdateOnRelease   =true;\
+        name                =Github
+
+pwd                     ${env;REPOSITORY_PASSWORD;}
+usr                     ${env;REPOSITORY_USERNAME;}
+
+-connection-settings: \
+    ${if;${pwd};server;-dummy};id=${rel};username=${usr};password=${pwd}, \
+    -bnd
+

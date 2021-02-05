@@ -1,0 +1,14 @@
+*.bak
+/.metadata/
+/.recommenders/
+Archive
+.DS_Store
+.*.swp
+/.gradle/
+/reports/
+*/generated/
+/install-jdk.sh
+/bin/
+/cnf/cache/
+*.jar
+.to

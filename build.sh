@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 
 # expects REPOSITORY_USERNAME & REPOSITORY_PASSWORD to be set
 # and ../build contains the resources
@@ -8,6 +8,8 @@ curl https://repo1.maven.org/maven2/biz/aQute/bnd/biz.aQute.bnd/5.2.0/biz.aQute.
 
 echo Build bundle
 java -jar bnd.jar build
+
+echo $?
 
 ls com.heilaiq.portal.ui.webresource/generated/com.heilaiq.portal.ui.webresource.jar
 

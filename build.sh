@@ -7,12 +7,12 @@ echo "Downloading bnd"
 curl https://repo1.maven.org/maven2/biz/aQute/bnd/biz.aQute.bnd/5.2.0/biz.aQute.bnd-5.2.0.jar >bnd.jar
 
 echo Build bundle
-java -jar bnd.jar build
+java -jar bnd.jar -dt build
 
 echo $?
 
 ls com.heilaiq.portal.ui.webresource/generated/com.heilaiq.portal.ui.webresource.jar
 
 echo Release
-java -jar bnd.jar release -w
+java -jar bnd.jar -dt release -w
 
